@@ -1,0 +1,99 @@
+<!doctype html>
+<html>
+ <meta charset="utf-8">
+<div id="test"></div>
+  <head>
+    <title>API для Neo4j</title>
+  </head>
+  <body>
+    <h1>Отправить запрос на сервер Neo4j </h1>
+
+
+
+<a href = "/"> Сброс</a>
+
+<form onsubmit="sendData(); return false;">
+  <label for="name">Введите ФИО:</label><br>
+  <input type="text" id="name" name="name"><br><br>
+  <input type="submit" value="Отправить">
+  <label for="result">Результат:</label>
+  <output type="text" id="result" name="result" disabled>
+
+</form>
+
+<script>
+  function sendData() {
+    var name = document.getElementById("name").value;
+    var data = { "name": name };
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", '/api/get_person_data_py');
+    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+    xhr.send(JSON.stringify(data));
+    xhr.onload = function() {
+      if (xhr.status != 200) {
+        alert("Ошибка " + xhr.status + ": " + xhr.statusText);
+      } else {
+        alert("Данные отправлены!");
+	//alert(xhr.responseText);
+	document.getElementById("result").value = xhr.responseText;
+      }
+    };
+  }
+</script>
+
+
+
+
+
+
+
+
+    <form method="POST" action="/api"  >
+      <input type="submit" value="Отправить запрос о активных пользователях" >
+
+   
+
+{% block content %}
+    <h1>{% block title %} Список событий {% endblock %}</h1>
+	{% for event in events %}
+		<a href="#" onclick="makeApiRequest()">
+           		 <h3>Событие id: {{event['Events.id']}} : {{event['Persons.name']}} Клиент {{event['Persons2.name']}}</h3>
+		</a> 
+		 <hr>
+	{% endfor %}	
+       
+    <hr>    
+{% endblock %}
+
+
+{% block top %}
+    <h1>{% block title2 %} Топ активныых менеджеров {% endblock %}</h1>
+    
+	{% for event in events %}
+
+	<a href="#" onclick="makeApiRequest()">
+           		 <h3>Событие id: {{event['Events.id']}} : {{event['Persons.name']}} Клиент {{event['Persons2.name']}}</h3>
+</a> 
+		 <hr>
+<span class="badge badge-primary">{{ event['id'] }}</span>
+	{% endfor %}	
+       
+    <hr>    
+
+    {% for post in posts %}	
+
+        <a href="#" onclick="makeApiRequest()">
+            <h2>{{ post['name']}} Упоминаний: {{ post['count']}}</h2>	
+        </a> 
+ <hr>
+<span class="badge badge-primary">{{ post['id'] }}</span>
+    {% endfor %}
+ <hr>
+	
+{% endblock %}
+
+
+
+    </form>
+  </body>
+</html>

@@ -1,0 +1,118 @@
+﻿[
+  {
+    "Events": {
+"identity": 1041,
+"labels": [
+        "Event"
+      ],
+"properties": {
+"id": "66267"
+      }
+    },
+    "Meneger": {
+"identity": 1039,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Башнина Антонина Глебовна"
+      }
+    },
+    "Persons": {
+"identity": 1040,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Павлючиков Максим Филиппович"
+      }
+    }
+  },
+  {
+    "Events": {
+"identity": 3156,
+"labels": [
+        "Event"
+      ],
+"properties": {
+"id": "208421"
+      }
+    },
+    "Meneger": {
+"identity": 3154,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Башнина Антонина Глебовна"
+      }
+    },
+    "Persons": {
+"identity": 3155,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Сергулин Егор Глебович"
+      }
+    }
+  },
+  {
+    "Events": {
+"identity": 3435,
+"labels": [
+        "Event"
+      ],
+"properties": {
+"id": "224711"
+      }
+    },
+    "Meneger": {
+"identity": 3433,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Башнина Антонина Глебовна"
+      }
+    },
+    "Persons": {
+"identity": 3434,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Аргентовская Евгения Евгеньевна"
+      }
+    }
+  },
+  {
+    "Events": {
+"identity": 4398,
+"labels": [
+        "Event"
+      ],
+"properties": {
+"id": "292757"
+      }
+    },
+    "Meneger": {
+"identity": 4396,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Башнина Антонина Глебовна"
+      }
+    },
+    "Persons": {
+"identity": 4397,
+"labels": [
+        "Person"
+      ],
+"properties": {
+"name": "Купоров Григорий Станиславович"
+      }
+    }
+  }
+]

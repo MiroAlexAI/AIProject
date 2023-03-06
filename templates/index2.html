@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+ <meta charset="utf-8" />
+  <head>
+    <title>Моя страница</title>
+  </head>
+  <body>
+    <h1>Отправить запрос на сервер Neo4j </h1>
+    <form method="POST" action="/api">
+      <input type="submit" value="Отправить запрос о активных пользователях">
+
+    <form method="POST" action="/api/get_person_data">
+      <input type="submit" value="Отправить запрос о определённом пользователе">
+
+{% block content %}
+    <h1>{% block title %} Топ активныых менеджеров {% endblock %}</h1>
+    {% for post in posts %}
+        <a href="#">
+            <h2>{{ post['name']}} Событий: {{ post['count'] }} </h2>
+        </a> 
+        <span class="badge badge-primary">{{ post['count'] }}</span>
+        <hr>
+    {% endfor %}
+{% endblock %}
+
+
+    </form>
+  </body>
+</html>
